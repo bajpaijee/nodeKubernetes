@@ -1,14 +1,14 @@
-const express = require('express')
-const app = express()
+const http = require('http');
 
-/*
-    For the purpose of making the testing easier, we've just put this
-    in a seperate file.
-*/
-const myLib = require('./lib')
+const hostname = '127.0.0.1';
+const port = 3000;
 
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World1\n');
+});
 
-app.get('/', (req, res) => res.send(myLib.helloWorld()))
-
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
-
+server.listen(port, "localhost", () => {
+  console.log(`Server running`);
+});
