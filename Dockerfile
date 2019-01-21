@@ -16,6 +16,6 @@ COPY . .
 
 # Run any other build steps such as `npm run build`
 
-EXPOSE 6000
+EXPOSE 3000
 
 CMD [ "npm", "start" ]
